@@ -1,5 +1,5 @@
 import numpy as np
-
+import time
 arr0=np.array(112)
 arr1=np.array([1,2,3,4])
 arr2=np.array([[1,2,3,4],[1,2,3,4],[1,2,3,4]])
@@ -49,3 +49,23 @@ arr10=np.array([1,0,3,0,4])
 arr10dub=arr10.astype(bool)
 print(arr10.dtype)
 print(arr10dub.dtype)
+
+
+pyarr=[1,2,3,4]*2
+print(pyarr)
+
+numarr=np.array([1,2,3,4])*2
+print(numarr)
+
+
+start=time.time()
+py=[x*2 for x in range(100000000)]
+print("time:",time.time()-start)
+
+
+start=time.time()
+num=np.arange(100000000)*2 # numpy is FASTER than PYTHON in terms of CALCULATION with ARRAYS
+print("time :",time.time()-start)
+
+
+

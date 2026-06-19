@@ -59,13 +59,82 @@ print(numarr)
 
 
 start=time.time()
-py=[x*2 for x in range(100000000)]
+py=[x*2 for x in range(1000)]
 print("time:",time.time()-start)
 
 
 start=time.time()
-num=np.arange(100000000)*2 # numpy is FASTER than PYTHON in terms of CALCULATION with ARRAYS
+num=np.arange(1000)*2 # numpy is FASTER than PYTHON in terms of CALCULATION with ARRAYS
 print("time :",time.time()-start)
 
 
+
+#generate arrays
+
+zero=np.zeros((3,4))
+print(zero)
+
+one=np.ones((4,3))
+print(one)
+
+full=np.full((2,2),69)
+print(full)
+randm=np.random.random((2,3))*10
+print(randm)
+
+sequence=np.arange(0,20,2)
+print(sequence)
+
+
+#scalar 
+dim1=np.array(3)
+print(dim1.ndim)
+print(dim1)
+
+#vector
+
+dim2=np.array([1,2,3,4])
+print(dim2.ndim)
+print(dim2)
+
+#matrix
+
+dim3=np.array([[1,2,3,4],[5,6,7,8]])
+print(dim3.ndim)
+print(dim3)
+
+
+#tensor
+tensor=np.array([[[1,2,3,4],[5,6,7,8]],
+                 [[1,2,3,4],[5,6,7,8]]])
+
+print(tensor)
+print(tensor.ndim)
+
+
+#array properties
+
+array=np.array([[1,2,3,4],[5,6,7,8]])
+print(array.size)
+print(array.dtype)
+print(array.ndim)
+print(array.shape)
+
+
+#more array proprties
+
+arr=np.arange(12)
+print(arr)
+shaped=arr.reshape(3,4)
+print(shaped)
+flatten=shaped.flatten()
+print(flatten)
+raveled=shaped.ravel()
+print(raveled)
+
+flatten[0]=100
+print(shaped)
+#trnaspose
+transpose=shaped.T
+print(transpose)
 

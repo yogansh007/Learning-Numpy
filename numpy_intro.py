@@ -222,6 +222,10 @@ sales = np.array([
     [25, 30, 28]
 ])
 
+
+monthly=np.array([45000,60000,12000,700000,500000,100000,45000,10000,70000,50000,12000,900000])
+
+
 print(sales)
 print("sales of samsung :", sales[:,1])
 
@@ -235,3 +239,18 @@ print("most units sold on x day:",sales.max())
 print("lowest units sold throguhtout the week:",sales.min())
 
 print("mean sales per brand :",np.mean(sales,axis=0))
+
+print("cf of each brand :",np.cumsum(sales,axis=0))
+arr_ek=np.array([1,2,3,4])
+arr_do=np.array([5,6,7,8])
+print(arr_ek+arr_do)
+print(arr_do*arr_ek)
+print(np.dot(arr_ek,arr_do))
+angle=np.arccos(np.dot(arr_ek,arr_do)/(np.linalg.norm(arr_ek)*np.linalg.norm(arr_do)))
+print(angle)
+
+phone_brands=np.array(["oppo","vivo","samsung","apple"])
+vectorized_upperCase=np.vectorize(str.upper)
+print(vectorized_upperCase(phone_brands))
+weekly_revenue=monthly /4
+print(weekly_revenue)

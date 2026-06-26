@@ -138,3 +138,92 @@ print(shaped)
 transpose=shaped.T
 print(transpose)
 
+
+
+#accessing
+sample=np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(sample[:,2])
+
+
+#sort
+
+
+unsorted=np.array([[3,54],[63,62],[253,24]])
+print(np.sort(unsorted,axis=0))
+
+#filtering
+
+
+numbers=np.array([1,2,3,4,5,6,7,8,9,10,19])
+print(numbers[numbers%2==0])
+
+#masking=stores expression in variables and diretly using them                                                  
+
+mask=numbers > 5
+
+print(numbers[mask])
+
+
+#fancy indices
+
+indices=[1,2,5]
+print(numbers[indices])
+
+where=np.where(numbers>5)
+print(numbers[where])
+
+
+#creating array with where
+new_arr=np.where(numbers>7,True,False)
+print(new_arr)
+
+#array concat
+
+arr_one=np.array([1,2,3])
+arr_two=np.array([4,5,6])
+print(np.concatenate((arr_one,arr_two)))
+
+#compare shape
+
+sh1=np.array([1,2,3,4,5])
+sh2=np.array([5,2,5,4,2,4])
+print(np.shape(sh1)==np.shape(sh2))
+
+#row and column addition
+
+before=np.array([[1,2,4,5,6],[1,2,3,4,5]])
+new_row=np.array([[23,54,2,35,5]])
+after=np.vstack((before,new_row))
+print(after)
+
+
+prev=np.array([[1,2,3],[5,6,7]])
+nxt=np.array([[7],[8]])
+final=np.hstack((prev,nxt))
+print(final)
+
+
+#deletion
+
+before_deletion=np.array([1,3,5,3,5,3,34])
+after_deletion=np.delete(before_deletion,3)
+print(after_deletion)
+
+
+
+# real life data work
+# rows = monday to friday
+# columms =samsung oppo vivo
+sales = np.array([
+    [15, 20, 18],
+    [12, 25, 16],
+    [18, 22, 21],
+    [20, 19, 17],
+    [25, 30, 28]
+])
+
+print(sales)
+print("sales of samsung :", sales[:,1])
+
+print("oppo sales thorughout the week :",np.sum(sales[:,1],axis=0))
+print("overall shop unit sales on tudesday",np.sum(sales[0,:],axis=0))

@@ -254,3 +254,12 @@ vectorized_upperCase=np.vectorize(str.upper)
 print(vectorized_upperCase(phone_brands))
 weekly_revenue=monthly /4
 print(weekly_revenue)
+
+
+
+# file system in numpy
+
+save_array=np.array([1,4,2,4,3])
+np.save("npfile1.npy",save_array)
+readed=np.load('npfile1.npy')
+print(readed)

@@ -226,4 +226,12 @@ print(sales)
 print("sales of samsung :", sales[:,1])
 
 print("oppo sales thorughout the week :",np.sum(sales[:,1],axis=0))
-print("overall shop unit sales on tudesday",np.sum(sales[0,:],axis=0))
+print("overall shop unit sales on monday",np.sum(sales[0,:],axis=0))
+
+print("maximum units brand sold most phones in each day :",np.max(sales[:,:],axis=1))
+
+print("minimum units brand sold most phones in each day :",np.min(sales[:,:],axis=0))
+print("most units sold on x day:",sales.max())
+print("lowest units sold throguhtout the week:",sales.min())
+
+print("mean sales per brand :",np.mean(sales,axis=0))
